@@ -5,6 +5,30 @@ I upload my work **every day**, including practice files, mini projects, and exp
 
 ---
 
+## JavaScript Progress
+
+Day 01  
+JavaScript introduction  
+Using JavaScript inside HTML (script tag)  
+Basic console output
+
+Day 02  
+If–else conditions  
+Functions and arrow functions  
+String methods and string assignment
+
+Day 03  
+Loops (for, while, do-while)  
+Break and continue  
+General practice (no assignment)
+
+Day 04  
+Arrays  
+Array methods (length, pop, join, reverse, slice)  
+Array assignment and practice
+
+---
+
 ## Purpose
 - Track my **day-by-day JavaScript progress**
 - Practice concepts through **hands-on coding**
