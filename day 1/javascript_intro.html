@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <script>
+            console.warn("using js from html! in head")
+        </script>
+    </html>
+    <body>
+        <button onclick="alert('Free T-shirt')">
+        click me to win a T-shirt
+        <!--internal js-->
+        <script>
+            console.warn("using js from html! in body")
+        </script>
+
+        <!--external js-->
+        <script src="app.js"></script>
+    </body>
+</html>
