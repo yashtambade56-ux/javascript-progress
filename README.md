@@ -27,6 +27,9 @@ Arrays
 Array methods (length, pop, join, reverse, slice)  
 Array assignment and practice
 
+Day 05
+Map-Filter-Reduce
+
 ---
 
 ## Purpose
