@@ -51,7 +51,19 @@ Assignment: Add 5 quotes and make button show new one
 
 
 ---
-##assignment
+## assignment
+Assignment 1    
+Print message using console.log()     
+Use variables and template strings     
+
+Assignment 2     
+String methods practice    
+Length, uppercase, lowercase, slice, split, replace   
+
+Assignment 3    
+Array basics     
+Access first, middle, last elements     
+Use loop, reverse, slice     
 
 ---
 ## Purpose
