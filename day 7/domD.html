@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<!-- replace with -->
+<body> 
+    <div id="box" class="section">
+        hello
+        <span>world</span>
+    </div>
+
+    <script>
+        let spanTag = document.querySelector("span")
+        spanTag.replaceWith("earth")
+    </script>
+</body> 
+
+<!-- replce child -->
+
+<body> 
+    <div id="box" class="section">
+        hello
+        <span>world</span> 
+
+    </div>
+
+    <script>
+        let spantag= document.querySelector("span");
+    let parentnode = document.querySelector("#box")
+    let newchild = document.createElement('p')
+    newchild.textContent = "yash"
+    newchild.style = "display:inline-block"
+    newchile.style = "color:red"
+    newchild.style.color ="red"
+    newchild.classList.add('fname')
+    parentnode.replaceChild(newchild, spantag)
+    </script>
+</body>
+
+<!-- removeChild -->
+
+<body> 
+    <div id="box" class="section">
+        hello
+        <span>world</span> 
+        
+    </div>
+
+    <script>
+        let spantag1= document.querySelector("span");
+    let parentnode1 = document.querySelector("#box")
+    let newchild = document.createElement('p')
+    parentnode.removeChild(newchild, spantag)
+    </script>
+</body> 
+
+
+
+<body> 
+    <div id="box" class="section">
+        hello
+        <span>world</span> 
+        
+    </div>
+
+    <script>
+    console.log(parentnode.innerhtml);
+    console.log(parentnode.innernode);
+    console.log(parentnode.parentnode);
+    </script>
+</body>
+<style>
+    
+</style>
+</html>
