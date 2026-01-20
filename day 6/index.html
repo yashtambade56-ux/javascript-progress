@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="first-para" >this is my p tag</p>
+    <p id="second-para">this is my 2 p tag</p>
+
+    <script>
+        // to get tag we have 2 method queryselector, get elementbyid
+        //const ptag = document.getElementById('first-para');
+        const ptag = document.getElementById('first-para')
+        ptag.textContent ="play";
+        // goal to change text inside p tag -> innertext, textcontent
+        console.log(ptag);
+
+        //changing style
+        // ptag.style = "color:red";
+        ptag.style.color = "blue";
+    </script>
+</body>
+</html>
