@@ -1,4 +1,4 @@
-# JavaScript Daily Progress 🚀
+# JavaScript Daily Progress
 
 This repository contains my **daily JavaScript learning progress**.  
 I upload my work **every day**, including practice files, mini projects, and experiments as I learn web development.
@@ -31,9 +31,28 @@ Day 05
 array_methods
 Map-Filter-Reduce
 
+Day 06  
+DOM Manipulation    
+Select elements, change text/style    
+Event listeners    
+Practice    
+
+Day 07    
+Counter App   
+Increase/decrease number with buttons    
+Use DOM & events   
+Assignment: Make a counter for clicks   
+
+Day 08    
+Random Quote Generator   
+Display random quote on button click   
+Use arrays & DOM   
+Assignment: Add 5 quotes and make button show new one   
+
 
 ---
 
+---
 ## Purpose
 - Track my **day-by-day JavaScript progress**
 - Practice concepts through **hands-on coding**
@@ -42,5 +61,5 @@ Map-Filter-Reduce
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 Each day has its own folder:
