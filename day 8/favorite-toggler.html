@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Favorite Icon Toggler</title>
+
+<style>
+  body {
+    font-family: Arial;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .item-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    background: #222;
+    width: 250px;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .favorite-icon {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+
+  .favorite-icon.filled {
+    color: red;
+  }
+</style>
+</head>
+
+<body>
+
+<ul class="item-list">
+  <li>JavaScript <button class="favorite-icon">&#9825;</button></li>
+  <li>Python <button class="favorite-icon">&#9825;</button></li>
+  <li>HTML <button class="favorite-icon">&#9825;</button></li>
+</ul>
+
+<script>
+  const buttons = document.querySelectorAll(".favorite-icon");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("filled");
+
+      if (btn.classList.contains("filled")) {
+        btn.innerHTML = "&#10084;";
+      } else {
+        btn.innerHTML = "&#9825;";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
