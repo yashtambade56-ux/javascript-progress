@@ -65,6 +65,14 @@ Array basics
 Access first, middle, last elements     
 Use loop, reverse, slice     
 
+Assignment 4               
+JavaScript Calculator                   
+HTML, CSS, JavaScript used              
+Basic calculator project              
+Number and operator buttons              
+Equal and clear functions                           
+Simple DOM events                             
+
 ---
 ## Purpose
 - Track my **day-by-day JavaScript progress**
