@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cache...</title>
+</head>
+<body>
+    <button onclick="savetocache()">save to cache</button>
+    <button onclick="loadfromcache()">load from cache</button>
+    <br>
+    <img id="myimg" src="" alt="cached img" width="300"></img>
+    <script>
+        let url ='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyi8-ZmU_R5CKr_78p8tcJJZHvUFxJLGNGEqri6MpuFQ&s'
+        // make a cache box add url in that box
+        async function savetocache(){
+            let mybox = await caches.open('box');
+            await mybox.add(url);
+        }
+
+        async function loadfromcache(){
+            // open the box, get the url
+            let mybox = await caches.open('box');
+            let storedurl =  await mybox.match(url);
+            console.log(storedurl.url);
+            document.getElementById('myimg').src = storedurl.url;
+        }
+
+    </script>
+</body>
+</html>
