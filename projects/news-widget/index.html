@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newsList</title>
+</head>
+<body>
+    <h2>News Widget</h2>
+
+<ul id="news">Loading news...</ul>
+
+<script>
+fetch("https://hn.algolia.com/api/v1/search?query=india")
+
+  .then(response => response.json())
+
+  .then(data => {
+
+    let newsList = "";
+
+    // Show first 5 news titles
+    data.hits.slice(0, 5).forEach(item => {
+      newsList += "<li>" + item.title + "</li>";
+    });
+
+    document.getElementById("news").innerHTML = newsList;
+  })
+
+  .catch(() => {
+    document.getElementById("news").innerHTML = "Failed to load news!";
+  });
+</script>
+
+</body>
+
+<style>
+    body{
+        font-family: 'Times New Roman', Times, serif;
+        margin: 20px;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    h2 {
+        color: aqua;
+        font-size: 20px;
+    }
+    #temp {
+        font-size: 10px;
+        margin-top: 20px;
+    }
+</style>
+</body>
+</html>
