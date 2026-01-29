@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mumbai Weather</title>
+</head>
+<body>
+  <h2>Mumbai Weather</h2>
+
+<p id="temp">Loading...</p>
+
+<script>
+async function getWeather() {
+
+  // Mumbai Latitude & Longitude
+  let lat = 19.07;
+  let lon = 72.87;
+
+  let res = await fetch(
+    `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m`
+  );
+
+  let data = await res.json();
+
+  document.getElementById("temp").innerHTML =
+    "Temperature: " + data.current.temperature_2m + "°C";
+}
+
+getWeather();
+</script>
+
+</body>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  h2 {
+    color: #007acc;
+    font-size: 30px;
+  }
+
+  #temp {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+</style>
+</html>
