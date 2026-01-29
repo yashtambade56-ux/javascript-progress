@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+</head>
+<body>
+
+    <button onclick="orderPizza()">Order Pizza 🍕</button>
+    <br><br>
+    <button onclick="orderCake()">Order Cake 🍰</button>
+
+    <script>
+  
+        function orderCake() {
+            console.log("Order placed...");
+            
+            helperFunction().then((message) => {
+                console.log(message);
+            });
+        }
+
+        async function orderCakeTwo() {
+            console.log(" order cake...")
+        }
+
+        function helperFunction() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Cake ready and delivered 🎂");
+                }, 3000);
+            });
+        }
+
+    
+        function orderPizza() {
+            setTimeout(() => {
+                console.log("Accepting your order...");
+                console.log("Your order was accepted");
+            }, 2000);
+
+            setTimeout(() => {
+                console.log("Your order was prepared");
+            }, 5000);
+
+            setTimeout(() => {
+                console.log("Your order was delivered 🍕");
+            }, 8000);
+        }
+    </script>
+
+</body>
+</html>
