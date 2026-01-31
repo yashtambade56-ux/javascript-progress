@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storytelling App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .story-container {
+      border: 2px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      margin: 0 auto;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      color: white;
+    }
+
+    #scary-btn { background-color: #ee4b2b; }
+    #funny-btn { background-color: #f1be32; }
+    #adventure-btn { background-color: #acd157; }
+
+    #result {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Want to hear a short story?</h1>
+
+  <div class="story-container">
+    <div>
+      <button id="scary-btn">Scary Story</button>
+      <button id="funny-btn">Funny Story</button>
+      <button id="adventure-btn">Adventure Story</button>
+    </div>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    const storyContainer = document.querySelector('.story-container');
+    const result = document.querySelector('#result');
+
+    const stories = {
+      scary: {
+        text: "In the dark woods, a group of friends stumbled upon an old, abandoned cabin. They awaken something malevolent.",
+        color: "#ee4b2b"
+      },
+      funny: {
+        text: "Mark tried to cook dinner over a campfire but burned his dinner and eyebrows off!",
+        color: "#f1be32"
+      },
+      adventure: {
+        text: "Sarah and Jake found an ancient temple in the Amazon, facing traps and wildlife while deciphering clues.",
+        color: "#acd157"
+      }
+    };
+
+    function showStory(type) {
+      result.textContent = stories[type].text;
+      storyContainer.style.borderColor = stories[type].color;
+    }
+
+    document.getElementById('scary-btn').onclick = () => showStory('scary');
+    document.getElementById('funny-btn').onclick = () => showStory('funny');
+    document.getElementById('adventure-btn').onclick = () => showStory('adventure');
+  </script>
+
+</body>
+</html>
