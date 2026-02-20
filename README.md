@@ -49,7 +49,46 @@ Display random quote on button click
 Use arrays & DOM   
 Assignment: Add 5 quotes and make button show new one   
 
-
+Day 09              
+Cookies & Async Orders              
+Use document.cookie                       
+Simulate pizza & cake orders with setTimeout, Promises, async/await                        
+                              
+Day 10                                
+Cache API                                                                     
+Save and load resources (images) from browser cache                                                                             
+                   
+Day 11                   
+Classes & Objects                        
+BankAccount class with deposit, withdraw, display methods                    
+                  
+Day 12                  
+Array of Objects & Filtering                
+Filter objects by property             
+Use collect.js for querying              
+             
+Day 13              
+Tic-Tac-Toe Game                     
+DOM manipulation, event listeners            
+Handle player moves, winning, and draws              
+            
+Day 14                    
+TensorFlow.js                      
+Simple linear regression in browser               
+Predict values from training data              
+               
+Day 15                  
+AI Agent with LangChain & Ollama                   
+Invoke AI to answer JS-related questions              
+                           
+Day 16                   
+Advanced AI & Web Search                   
+Use TavilySearch with LangChain for internet results             
+                 
+Day 17              
+Moment.js                          
+Work with dates and times in human-readable format              
+                           
 ---
 ## assignment
 Assignment 1    
@@ -73,6 +112,18 @@ Number and operator buttons
 Equal and clear functions                           
 Simple DOM events                             
 
+---             
+## Projects                
+             
+Mumbai Weather App                   
+Fetch current temperature using Open-Meteo API            
+                 
+News Widget              
+Display latest news using Hacker News API              
+              
+Whack-a-Ghost Game                  
+Interactive browser game with score and timer            
+               
 ---
 ## Purpose
 - Track my **day-by-day JavaScript progress**
