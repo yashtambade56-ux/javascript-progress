@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whack-a-Ghost</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:#fff;
+}
+
+h1 {
+  margin-bottom:10px;
+  text-shadow:2px 2px 8px rgba(0,0,0,0.7);
+}
+
+#score, #timer {
+  font-size:1.5em;
+  margin-bottom:10px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(3, 100px);
+  gap:15px;
+}
+
+.cell {
+  width:100px;
+  height:100px;
+  background: #1f1f2e;
+  border: 3px solid #fff;
+  border-radius:10px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:50px;
+  cursor:pointer;
+}
+
+.mole {
+  position:absolute;
+  bottom:-60px;
+  transition:bottom 0.3s;
+}
+
+.mole.active {
+  bottom:10px;
+}
+
+button {
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  border-radius:10px;
+  background:#32cd32;
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
+  transition: background 0.3s;
+}
+
+button:hover { background:#3ce03c; }
+</style>
+</head>
+<body>
+
+<h1>Whack-a-Ghost 👻</h1>
+<div id="score">Score: 0</div>
+<div id="timer">Time: 30s</div>
+<div class="grid" id="grid"></div>
+<button id="startBtn">Start Game</button>
+
+<script>
+const grid = document.getElementById('grid');
+const scoreDisplay = document.getElementById('score');
+const timerDisplay = document.getElementById('timer');
+const startBtn = document.getElementById('startBtn');
+
+let score = 0;
+let activeMole = null;
+let gameInterval;
+let countdownInterval;
+let timeLeft = 30;
+
+// create 9 cells with ghost emoji
+for(let i=0;i<9;i++){
+  const cell = document.createElement('div');
+  cell.classList.add('cell');
+  cell.textContent = ''; // empty by default
+  grid.appendChild(cell);
+
+  cell.addEventListener('click',()=>{
+    if(cell.classList.contains('active')){
+      score++;
+      scoreDisplay.textContent = 'Score: '+score;
+      cell.classList.remove('active');
+      cell.textContent = '';
+    }
+  });
+}
+
+// randomly pop up ghost
+function popMole(){
+  const cells = document.querySelectorAll('.cell');
+  if(activeMole){
+    activeMole.classList.remove('active');
+    activeMole.textContent = '';
+  }
+
+  const randomIndex = Math.floor(Math.random()*cells.length);
+  activeMole = cells[randomIndex];
+  activeMole.classList.add('active');
+  activeMole.textContent = '👻';
+}
+
+// start game
+startBtn.addEventListener('click',()=>{
+  score=0;
+  timeLeft=30;
+  scoreDisplay.textContent = 'Score: 0';
+  timerDisplay.textContent = 'Time: 30s';
+  if(gameInterval) clearInterval(gameInterval);
+  if(countdownInterval) clearInterval(countdownInterval);
+
+  gameInterval = setInterval(popMole,800);
+
+  countdownInterval = setInterval(()=>{
+    timeLeft--;
+    timerDisplay.textContent = 'Time: '+timeLeft+'s';
+    if(timeLeft<=0){
+      clearInterval(gameInterval);
+      clearInterval(countdownInterval);
+      if(activeMole){
+        activeMole.classList.remove('active');
+        activeMole.textContent = '';
+      }
+      alert('Time Up! Your Score: '+score);
+    }
+  },1000);
+});
+</script>
+
+</body>
+</html>
