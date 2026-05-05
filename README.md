@@ -125,6 +125,12 @@ Whack-a-Ghost Game
 Interactive browser game with score and timer            
                
 ---
+
+Mini Project                                 
+REST API Tester Web Application
+
+---
+
 ## Purpose
 - Track my **day-by-day JavaScript progress**
 - Practice concepts through **hands-on coding**
