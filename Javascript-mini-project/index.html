@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>REST API Tester</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+textarea {
+  height: 120px;
+  font-family: monospace;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.output {
+  margin-top: 20px;
+  background: #111;
+  color: #0f0;
+  padding: 15px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>REST API Tester</h2>
+
+  <input id="url" placeholder="Enter API URL">
+
+  <select id="method">
+    <option>GET</option>
+    <option>POST</option>
+    <option>PUT</option>
+    <option>DELETE</option>
+  </select>
+
+  <textarea id="headers" placeholder='Headers (JSON format)
+Example:
+{
+  "Content-Type": "application/json"
+}'></textarea>
+
+  <textarea id="body" placeholder='Request Body (JSON format for POST/PUT)
+Example:
+{
+  "title": "New Post",
+  "body": "Hello",
+  "userId": 1
+}'></textarea>
+
+  <button onclick="sendRequest()">Send Request</button>
+
+  <div class="output" id="output">Response will appear here...</div>
+</div>
+
+<script>
+async function sendRequest() {
+  const url = document.getElementById("url").value;
+  const method = document.getElementById("method").value;
+  const headersInput = document.getElementById("headers").value;
+  const bodyInput = document.getElementById("body").value;
+  const output = document.getElementById("output");
+
+  if (!url) {
+    output.textContent = "Error: Please enter a URL";
+    return;
+  }
+
+  let headers = {};
+  try {
+    if (headersInput) headers = JSON.parse(headersInput);
+  } catch {
+    output.textContent = "Error: Headers must be valid JSON";
+    return;
+  }
+
+  let options = {
+    method,
+    headers
+  };
+
+  if (method !== "GET" && bodyInput) {
+    options.body = bodyInput;
+  }
+
+  output.textContent = "Loading...";
+
+  try {
+    const response = await fetch(url, options);
+
+    const status = `Status: ${response.status} ${response.statusText}`;
+    const responseHeaders = [...response.headers.entries()]
+      .map(h => `${h[0]}: ${h[1]}`)
+      .join("\n");
+
+    let data;
+    try {
+      data = await response.json();
+    } catch {
+      data = await response.text();
+    }
+
+    output.textContent =
+      `${status}\n\n--- Headers ---\n${responseHeaders}\n\n--- Body ---\n${JSON.stringify(data, null, 2)}`;
+  } catch (error) {
+    output.textContent = "Error: " + error.message;
+  }
+}
+</script>
+
+</body>
+</html>
