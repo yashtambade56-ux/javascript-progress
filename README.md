@@ -131,6 +131,12 @@ REST API Tester Web Application
 
 ---
 
+Final Project                                            
+This project is a complete frontend application built using HTML, CSS, and JavaScript, combining all core web development concepts into a single responsive and functional project.
+                    
+Repo: https://github.com/yashtambade56-ux/axon-ev-project                    
+Live: https://axonev.vercel.app/                         
+
 ## Purpose
 - Track my **day-by-day JavaScript progress**
 - Practice concepts through **hands-on coding**
